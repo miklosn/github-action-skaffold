@@ -33,6 +33,11 @@ inputs:
     default: '.'
     required: false
     description: Workdir
+  kubeconfig:
+    default: ''
+    required: false
+    description: kubeconfig
+
 outputs: {}
 runs:
   using: docker
@@ -43,4 +48,5 @@ runs:
     SKAFFOLD_TAG: ${{ inputs.tag }}
     SKAFFOLD_BUILD_IMAGE: ${{ inputs.build-image }}
     SKAFFOLD_SKIP_TESTS : ${{ inputs.skip-tests }}
+    SKAFFOLD_KUBECONFIG : ${{ inputs.kubeconfig }}
     WORKDIR : ${{ inputs.workdir }}
