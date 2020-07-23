@@ -33,6 +33,10 @@ inputs:
     default: 'skaffold'
     required: false
     description: Entrypoint
+  workdir:
+    default: '.'
+    required: false
+    description: Workdir
 outputs: {}
 runs:
   using: docker
@@ -43,4 +47,4 @@ runs:
     SKAFFOLD_TAG: ${{ inputs.tag }}
     SKAFFOLD_BUILD_IMAGE: ${{ inputs.build-image }}
     SKAFFOLD_SKIP_TESTS : ${{ inputs.skip-tests }}
-
+    WORKDIR : ${{ inputs.workdir }}

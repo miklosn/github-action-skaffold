@@ -6,4 +6,4 @@ ADD https://storage.googleapis.com/skaffold/releases/v${skaffoldVersion}/skaffol
 ADD https://storage.googleapis.com/container-structure-test/v${containerStructureTestVersion}/container-structure-test-linux-amd64 container-structure-test
 COPY --from=docker /usr/local/bin/docker .
 RUN chmod -R +x /usr/local/bin
-ENTRYPOINT ["skaffold"]
+ENTRYPOINT ["cd ${WORKDIR} && skaffold"]
