@@ -40,7 +40,7 @@ inputs:
 outputs: {}
 runs:
   using: docker
-  image: docker://hiberb/skaffold:latest
+  image: docker://miklosn/skaffold:latest
   env:
     SKAFFOLD_DEFAULT_REPO: ${{ inputs.default-repo }}
     SKAFFOLD_PROFILE: ${{ inputs.profile }}
